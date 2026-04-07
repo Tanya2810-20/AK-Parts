@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Login | AK Parts & Tires Account</title>
+<meta name="title" content="Login | AK Parts & Tires Account" />
+<meta name="description" content="Login to AK Parts & Tires to track orders, update details, and shop quality auto parts and tires at the best prices." />
+<meta name="Keywords" content="login AK Parts, account access, auto parts login, tire store login" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="sticky_footer">
+  <!--=============== BANNER  SECTION START ==============-->
+  <section>
+    <div class="signup_box">
+      <div class="signup_box_main">
+        <div class="signup_box_left">
+          <div class="back_image">
+            <div class="sc-kAzzGY"> 
+              <a href="index.html">
+                <img src="images/white-logo.png" alt="logo"></a> 
+              </div>
+            <div class="content_tfg">
+              <h1>Login to Your Account</h1>
+              <p>Access your account and continue browsing premium, curated spare parts for Heavy-duty truck and trailer parts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="signup_box_right">
+          <div class="back_log">
+            <div class="inner_formDiv">
+              <div class="form_groupDiv">
+                <div class="Login-sd">
+                  <h1>Login</h1>
+                </div>
+                <div class="form_tp">
+                
+                  <div class="form-group error_div">
+                    <input type="text" class="form-control ctrl_focus" placeholder="Email">
+                    <span class="required-message"><img src="images/error-ico.svg" alt="error icon">Please enter a valid email address!</span>
+                    
+                    
+                  </div>
+                  <div class="form-group form_grp_flex error_div">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <span class="material-symbols-outlined eye_icon">
+                      visibility
+                      </span>
+                      <span class="required-message"><img src="images/error-ico.svg" alt="error icon">Please enter your password!</span>
+                  </div>
+
+                  <div class="form_chk_one">
+                    <div class="Check_box">
+                      <label class="m-checkbox m-checkbox--solid m-checkbox--single m-checkbox--brand me-4 Check_box_chk">
+                        <input type="checkbox" checked="">
+                        <span></span>
+                      </label>
+                      <span class="Check_box_txt">Remember me</span>
+                    </div>
+                    <label class="form-check-label left_n right_forgot"><a href="forgot-password.html">Forgot your Password ?</a>
+                    </label>
+                  </div>
+                  
+                  <div class="content_terms">
+                    <p>By continuing, you agree to AK Parts & Tires <a href=""> Terms  and  Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+                  </div>
+                  <a href="#" class="btn btn_primary btn_black" id="liveToastBtn">Login</a>
+                  <a href="signup.html" class="btn btn_primary btn_lign">Don’t have an account? Sign Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!--============ Toast Messages ============-->
+ <div class="success_toast_mssg">
+  <div class="success_toast_box" style="z-index: 11">
+    <div id="liveToast" class="toast hide success_toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000" data-bs-autohide="true">
+      <div class="toast-header success_head">
+        <div class="success_rect">
+          <span class="material-symbols-outlined fade-in-icon">check</span>
+        </div>
+        <strong class="me-auto">Success</strong>
+        <button type="button" class="btn-close btn-close-white toast_btn" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body success_body">
+        <p>Your form has been successfully submitted, and a confirmation email has been sent.</p>
+      </div>
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+</div>
+
+<div class="failure_toast_mssg">
+  <div class="failure_toast_box" style="z-index: 11">
+    <div id="live_failToast" class="toast hide failure_toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000" data-bs-autohide="true">
+      <div class="toast-header failure_head">
+        <div class="failure_rect">
+          <span class="material-symbols-outlined">
+            close
+            </span>
+        </div>
+        <strong class="me-auto">Invalid Email Address</strong>
+        <button type="button" class="btn-close btn-close-white toast_btn" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body failure_body">
+        <p>The email you provided appears to be incorrect. Please double check and try again.</p>
+      </div>
+      <div class="progress-bar-fail"></div>
+    </div>
+  </div>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!--============ SUCCESS TOAST START =============-->
+    <script>
+      document.getElementById("liveToastBtn").onclick = function () {
+        const toastEl = document.getElementById("liveToast");
+        const progressBar = toastEl.querySelector(".progress-bar");
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+        progressBar.style.width = "100%";
+        toastEl.addEventListener("hidden.bs.toast", () => {
+          progressBar.style.width = "0%";
+        });
+      };
+    </script>
+    <!--============ SUCCESS TOAST END =============-->
+    <!--============ FAIL TOAST START =============-->
+    <!-- <script>
+    document.getElementById("liveToastBtn").onclick = function () {
+      const toastEl = document.getElementById("live_failToast");
+      const progressBar = toastEl.querySelector(".progress-bar-fail");
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
+      progressBar.style.width = "100%";
+      toastEl.addEventListener("hidden.bs.toast", () => {
+        progressBar.style.width = "0%";
+      });
+    };
+    </script> -->
+    <!--============ FAIL TOAST END =============-->
+  
+</body>
+</html>
